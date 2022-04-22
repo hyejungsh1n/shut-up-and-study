@@ -32,4 +32,27 @@ What is Component? 사용자 정의 태그. 리팩토링에 용이.
 
 
 ## props
-리액트의 속성. 
+- 리액트의 속성.
+- 기본적으로 객체를 반환함. 즉, 객체로 접근이 가능하다.
+
+```
+function Header(props) {
+  return <header>
+  <h1><a href="/">{ props.title }</a></h1>
+	</header>
+}
+
+.. 생략
+
+function App() {
+  return (
+    <div>
+      <Header title="I want to go home"></Header>
+      <Nav></Nav>
+      <Article></Article>
+    </div>
+  );
+}
+``` 
+
+
