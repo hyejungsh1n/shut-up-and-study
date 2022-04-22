@@ -64,3 +64,21 @@ function App() {
 ex) `props.onChangeMode()`
 입력값 또한 주는 방법도 명시해두면 된다.
 
+## State
+prop과 state의 공통점 : 값이 변경 되면 새로운 return을 만들어줘서 ui를 바꿔줌.
+prop과 state의 차이점 : 
+- prop은 컴포넌트를 사용하는 외부자를 위한 데이터
+- state는 컴포넌트를 만드는 내부자를 위한 데이터
+hook : react에서 제공하는 일반적인 함수.
+
+사용법 
+```
+import `{useState} from 'react'`; // hook을 import
+const [mode, setMode] = useState('출근'); // setMode함수로 바뀔 값을 리턴해주면 됨.
+
+```
+
+useState는 배열을 리턴함.
+- useState의 인자로 들어가는 것은 초기값.
+- 0번째 데이터는 상태의 값을 읽음. 
+- 1번째 데이터는 상태를 변경할 때 사용하는 함수. 
