@@ -91,7 +91,7 @@ Primitive type? `string`, `number`, `boolean`, `undefined`, `symbol`, `null`
 * state를 만들 때, state의 데이터가 범객체인 경우.
 const [value, setValue] = useState(Object);
 ex) `object`, `array`
-newVlaue = {...value} // 객체일 경우
+newValue = {...value} // 객체일 경우
 newValue 변경
 setValue(newValue)
 즉 기존의 데이터를 건드리지 않고, 데이터를 복제한다.
