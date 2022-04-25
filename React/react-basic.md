@@ -82,3 +82,8 @@ useState는 배열을 리턴함.
 - useState의 인자로 들어가는 것은 초기값.
 - 0번째 데이터는 상태의 값을 읽음. 
 - 1번째 데이터는 상태를 변경할 때 사용하는 함수. 
+
+
+state를 만들 때, state의 데이터가 원시 데이터의 type이다. 
+const [value, setValue] = useState(PRIMITIVE); 
+Primitive type? string, number, boolean, undefined, symbol, null
