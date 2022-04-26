@@ -12,6 +12,7 @@
 
 ## WebPack, Babel
 `WebPack` : 수많은 컴포넌트를 하나로 결합하는데 사용하는 것
+
 `Babel` : ECMA scripts(표준화된 js문법)를 사용할 수 있게 해주는 것
 
 ## create-react-app
@@ -35,6 +36,7 @@ index.js // index.js에서 app.js에 있는 것을 리턴함
 ## 배포판 만들기
 `npm run build`  
 실행 시, `build` 라는 디렉토리를 확인할 수 있다. 파일의 불필요한 공백이 제거되어있는 것을 확인할 수 있다.
+
 사용이유 : 배포하기 전에 파일의 용량을 줄여주는 작업이 필요하다. 
 
 `npx serve -s build`
@@ -80,7 +82,9 @@ ex) `props.onChangeMode()`
 입력값 또한 주는 방법도 명시해두면 된다.
 
 ## State
+
 prop과 state의 공통점 : 값이 변경 되면 새로운 return을 만들어줘서 ui를 바꿔줌.
+
 prop과 state의 차이점 : 
 - prop은 컴포넌트를 사용하는 외부자를 위한 데이터
 - state는 컴포넌트를 만드는 내부자를 위한 데이터
@@ -99,11 +103,15 @@ useState는 배열을 리턴함.
 - 1번째 데이터는 상태를 변경할 때 사용하는 함수. 
 
 
-* state를 만들 때, state의 데이터가 원시 데이터인 경우. 
+### state를 만들 때, state의 데이터가 원시 데이터인 경우. 
+
 const [value, setValue] = useState(PRIMITIVE); 
+
 Primitive type? `string`, `number`, `boolean`, `undefined`, `symbol`, `null`
 
-* state를 만들 때, state의 데이터가 범객체인 경우.
+
+### state를 만들 때, state의 데이터가 범객체인 경우.
+
 const [value, setValue] = useState(Object);
 ex) `object`, `array`
 ```
@@ -112,6 +120,7 @@ newValue // 변경
 setValue(newValue)
 
 즉 state를 다룰 때, 원시 데이터가 아닌 복합적인 데이터일 때 기존의 데이터를 건드리지 않고, 데이터를 복제해야 함. 
+
 오리지널 데이터와 새로운 데이터를 비교하고 그게 같으면 굳이 컴포넌트를 렌더링하지 않는다.
 
 
