@@ -9,6 +9,11 @@
 `Virtual DOM` : 인터렉션이 발생하면 DOM에 접근하는 것이 아닌 가상의 DOM을 렌더링 하고, 이를 기존의 DOM과 비교하여 변화가 필요한 곳만 렌더링한다.
 실제 DOM은 리스트를 10개라고 가정할 시, 리스트 중 하나가 변하면 10개를 다 리로드해야 하는 단점이 있는데 이를 스냅샷화 했기 때문에 훨씬 효율적.
 -> DOM의 조작 최소화는 성능 문제로 직결
+
+## WebPack, Babel
+`WebPack` : 수많은 컴포넌트를 하나로 결합하는데 사용하는 것
+`Babel` : ECMA scripts(표준화된 js문법)를 사용할 수 있게 해주는 것
+
 ## create-react-app
 `npx create-react-app`
 
