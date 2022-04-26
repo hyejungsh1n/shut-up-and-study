@@ -106,9 +106,11 @@ Primitive type? `string`, `number`, `boolean`, `undefined`, `symbol`, `null`
 * state를 만들 때, state의 데이터가 범객체인 경우.
 const [value, setValue] = useState(Object);
 ex) `object`, `array`
+```
 newValue = {...value} // 객체일 경우
-newValue 변경
+newValue // 변경
 setValue(newValue)
+```
 즉 state를 다룰 때, 원시 데이터가 아닌 복합적인 데이터일 때 기존의 데이터를 건드리지 않고, 데이터를 복제해야 함. 
 오리지널 데이터와 새로운 데이터를 비교하고 그게 같으면 굳이 컴포넌트를 렌더링하지 않는다.
 
