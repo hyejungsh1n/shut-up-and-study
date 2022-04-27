@@ -8,7 +8,7 @@
 
 - 단일 파일일 경우
 
-`scp -P (PORT) (Local경로) (username)@(IP):/(경로)/(file명 또는 *)`
+`scp -P (PORT) (Local경로) (username)@(IP):/(경로)/(file명 또는 * )`
 
 - 파일을 포함하고 있는 디렉토리를 보낼 경우
 
@@ -18,7 +18,7 @@
 
 - 단일 파일
 
-`scp -P (PORT) (username)@(IP):/(경로)/(file명 또는 *) (Local경로)`
+`scp -P (PORT) (username)@(IP):/(경로)/(file명 또는 *) (Local경로) `
 
 - 파일을 포함하고 있는 디렉토리를 보낼 경우
 
