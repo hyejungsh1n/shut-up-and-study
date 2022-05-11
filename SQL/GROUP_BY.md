@@ -9,7 +9,9 @@
 `Rollup` 소그룹 간의 소계 및 총계를 계산.
 
 ROLLUP (A) -- A로 그룹핑
+
 ROLLUP (A, B) -- A, B로 그룹핑, A로 그룹핑, 총합계
+
 ROLLUP (A, B, C) -- A, B, C로 그룹핑, A,B로 그룹핑,  A로 그룹핑, 총합계 
 
 ```sql
