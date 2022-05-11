@@ -29,3 +29,6 @@ ORDER BY ORDER_DT;
 ```
 
 괄호로 묶이면 하나로 취급 ex) `GROUP BY ROLLUP((ORDER_DT, ORDER_ITEM), REG_NAME)` 이런 그룹 절이 들어갈 경우 괄호로 묶인것을 A로 보면 될 듯하다.
+
+
+
