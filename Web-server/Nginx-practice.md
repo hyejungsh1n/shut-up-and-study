@@ -41,7 +41,7 @@
 4. `/etc/nginx/nginx.conf` 설정
 
 5. `yum install nginx`
-    ngix 설치 
+    nginx 설치 
 
 6. 
     `systemctl status nginx` 상태 확인
