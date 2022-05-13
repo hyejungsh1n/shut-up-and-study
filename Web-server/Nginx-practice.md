@@ -2,8 +2,6 @@
 
 
 
-‪
-
 가. CentOS에 python3.7 설치
 
 0. `su-` 
