@@ -1,5 +1,4 @@
-## Elasticsearch의 이해
-
+## Elasticsearch란?
 
 JSON 요청을 처리하고 JSON 데이터를 반환하는 서버. 
 
@@ -14,38 +13,40 @@ JSON 요청을 처리하고 JSON 데이터를 반환하는 서버.
 5. 멀티테넌시 
 - 별도의 커넥션 없이 하나의 쿼리로 묶어 검색. 검색 결과를 하나의 출력으로 도출. 
 
-## Elasticsearch
+## ELK
+
+### Elasticsearch
 
 JSON 요청을 처리하고 JSON 데이터를 반환하는 서버.
 
- 
-
-## Logstash
+### Logstash
 
 엘라스틱 서치에서 데이터 수집을 위한 도구
 
-## Kibana
+### Kibana
 
 엘라스틱 서치의 시각화 도구
 
 ---
 
-## Cluster
+## 용어 정리
+
+### Cluster
 
 데이터베이스의 개념
 
-## Documents
+### Documents
 
 - 데이터베이스로 따지면 `documents`는 엔티티를 갖는 한 줄의 행과 같은 역할.
 - 모든 문서는 고유 ID를 가질 수 있음. 고유 ID를 갖거나 es에서 자동으로 할당해줄 수도 있음
 
-## INDEX
+### INDEX
 
 - 가장 높은 단계의 엔티티
 - 여러 `document`를 포함할 수 있음
 - 데이터베이스로 따지면 `table`
 
-## 용어 정리
+### etc
 
 - indexing : 데이터가 검색될 수 있는 구조로 변경화기 위해 원본 문서 검색어를 토큰들로 변환하여 저장하는 일련의 과정
 - search : 문서를 찾아가는 과정
