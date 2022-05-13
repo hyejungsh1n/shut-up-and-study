@@ -1,8 +1,8 @@
-### Nginx 서버 구축
+## Nginx 서버 구축
 
 
 
-가. CentOS에 python3.7 설치
+### 가. CentOS에 python3.7 설치
 
 0. `su-` 
     root 계정 로그인
@@ -25,3 +25,24 @@
 
 6.  `which python3.7`
     확인
+
+
+### 나. nginx 설치
+
+1. `vi /etc/yum.repos.d/nginx.repo`
+    파일 수정 -> [nginx-mainline] ~ 
+
+2. `yum install yum-utils`
+    리눅스 패키지 설치. yum의 성능을 높이기 위함.
+
+3. `yum-config-manager --enable nginx-mainline`
+    수정한 파일로 config를 도와줌
+
+4. `/etc/nginx/nginx.conf` 설정
+
+5. `yum install nginx`
+    ngix 설치 
+
+6. 
+    `systemctl status nginx` 상태 확인
+    `systemctl start nginx` 시작
