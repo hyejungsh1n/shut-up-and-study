@@ -60,7 +60,7 @@ prop을 통해 입력값이 있으면 return 해줌.
 - 리액트의 속성.
 - 기본적으로 객체를 반환함. 즉, 객체로 접근이 가능하다.
 
-```
+``` js
 function Header(props) {
   return <header>
   <h1><a href="/">{ props.title }</a></h1>
@@ -96,7 +96,7 @@ prop과 state의 차이점 :
 hook : react에서 제공하는 일반적인 함수.
 
 사용법 
-```
+``` js
 import `{useState} from 'react'`; // hook을 import
 const [mode, setMode] = useState('출근'); // setMode함수로 바뀔 값을 리턴해주면 됨.
 
@@ -119,7 +119,7 @@ Primitive type? `string`, `number`, `boolean`, `undefined`, `symbol`, `null`
 
 const [value, setValue] = useState(Object);
 ex) `object`, `array`
-```
+``` js
 newValue = {...value} // 객체일 경우
 newValue // 변경
 setValue(newValue)
