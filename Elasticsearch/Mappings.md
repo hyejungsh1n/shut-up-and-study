@@ -2,7 +2,7 @@
 
 스키마 정의 중 하나
 
-``` JSON
+``` Python
 curl -XPUT 127.0.0.1:9200/indexname  -d '
 {
 		"mappings": {
