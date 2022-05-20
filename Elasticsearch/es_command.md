@@ -24,4 +24,4 @@
 
 `sudo curl -X GET "localhost:9200/”`
 
-curl은 elasticsearch를 실행하는 서버에 http요청을 보낼 수 있는 명령어
+curl은 서버와 통신(요청 및 응답) 커맨드 명령어로 많은 프로토콜 지원
