@@ -32,18 +32,18 @@ Elasticsearch는 하나의 인덱스가 샤드라는 조각으로 나뉘고
 인덱스를 생성할 때 색인의 이름과 설정 구조, 프라이머리 샤드와 레플리카의 수를 나타내는 JSON을 지정해야 함
 
 
-```
-put /testindex      #요청  인덱스이름
+``` JSON
+put /testindex     
 
 { 
 
-“settings“: {
+    “settings“: {
 
-    “number_of_shards“:3     #프라이머리 샤드의 수
+            “number_of_shards“:3, 
 
-        “number_of_replicas“:1   #레플리카 샤드의 수
-
-}
+                “number_of_replicas“:1   
+    }
+}   
 ```
 
 클러스터 내 프라이머리 샤드의 수를 설정 후에는 변경할 수 없음
