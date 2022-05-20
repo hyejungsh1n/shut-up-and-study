@@ -23,3 +23,5 @@
 ### 포트 연결
 
 `sudo curl -X GET "localhost:9200/”`
+
+curl은 elasticsearch를 실행하는 서버에 http요청을 보낼 수 있는 명령어
