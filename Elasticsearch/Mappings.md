@@ -7,12 +7,11 @@ curl -XPUT 127.0.0.1:9200/indexname  -d '
 
 {
 	"mappings": {
-		"properties" : {
-			        "year" :  {
-                            "type" : 
-                                "date"}
+        "properties" : {
+            "year" :  {
+                "type" : "date"}
                 }
-		}
+        }
 }'
 ```
 
