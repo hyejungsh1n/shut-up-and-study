@@ -100,9 +100,9 @@ Elasticsearch는 특정 문서를 주어진 샤드로 해시
 curl -XPUT 127.0.0.1:9200/bulk?pretty -H 'Content-Type:application/json' --data-binary @movies.json
 ```
 
-Elasticsearch는 동일 문서는 두 번 추가 할 수 없다
+Elasticsearch는 동일 도큐먼트는 두 번 추가 할 수 없다
 
--> 동일 문서 추가 시, 버전 충돌 일어남
+-> 동일 도큐먼트 추가 시, 버전 충돌 일어남
 
 
 ------------
