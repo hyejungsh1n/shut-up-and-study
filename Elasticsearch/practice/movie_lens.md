@@ -132,7 +132,34 @@ curl -XPOST 127.0.0.1:9200/[index]/_doc/[id]/_update -d ' {
 ```
 -> `update` 기존의 기록을 가져와 하나 이상의 필드를 업데이트 
 
+이전 기존 버전에 있던 다른 것들은 복사, 새 번호를 가진 새 복사본 형성
+
+업데이트 수행 방법은 모든 필드를 포함하여 전체 문서 다시 지정 -> 업데이트 이벤트로 처리
 
 
+``` bash
 
+curl -XPUT 127.0.0.01:9200/movies/_doc/109487?pretty -H 'Content-Type:application/json' -d ' {"genre": ["IMAX", "Sci-fi"], "title": "Interstella CAT", "year": 2014 } '
 
+-- 출력 결과 -- 
+
+{
+  "_index" : "movies",
+  "_type" : "_doc",
+  "_id" : "109487",
+  "_version" : 2,
+  "result" : "updated",
+  "_shards" : {
+    "total" : 2,
+    "successful" : 1,
+    "failed" : 0
+  },
+  "_seq_no" : 5,
+  "_primary_term" : 3
+} 
+
+```
+
+"result"가 "updated"인 것을 확인할 수 있다
+
+기존 아이디로 검색 결과 요청 시, 복사본1이었던 Interstella는 삭제 되고 Interstella CAT만 남게 된다
