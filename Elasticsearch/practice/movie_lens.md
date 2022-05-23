@@ -88,7 +88,7 @@ Elasticsearch에서
 인덱스에 새로운 문서를 추가할 경우 POST 사용
 
 
-## Bulk API 사용하기
+### Bulk API 사용하기
 
 Elasticsearch는 특정 문서를 주어진 샤드로 해시
 
@@ -99,3 +99,22 @@ Elasticsearch는 특정 문서를 주어진 샤드로 해시
 ``` bash
 curl -XPUT 127.0.0.1:9200/bulk?pretty -H 'Content-Type:application/json' --data-binary @movies.json
 ```
+
+Elasticsearch는 동일 문서는 두 번 추가 할 수 없다
+
+-> 동일 문서 추가 시, 버전 충돌 일어남
+
+
+### elasticsearch 데이터 업데이트 및 삭제
+
+Elasticsearch 도큐먼트는 불변이기 때문에, 작성된 것을 변경할 수 없다
+
+그렇다면 이미 인덱싱 된 문서 변경 업데이트는 어떻게 하는가?
+
+-> `_version`이라는 필드를 사용하면 됨
+
+증가한 `_version` 번호로 문서의 새 복사본을 작성한다
+
+도큐먼트의 고유 ID와 버전을 함께 사용하면 됨 
+
+Elasticsearch는 자동으로 사용자가 작성한 최신 버전을 사용 
