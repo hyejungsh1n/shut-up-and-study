@@ -1,4 +1,4 @@
-## 실습
+# 실습
 
 
 ### 데이터 매핑하기
@@ -105,7 +105,9 @@ Elasticsearch는 동일 문서는 두 번 추가 할 수 없다
 -> 동일 문서 추가 시, 버전 충돌 일어남
 
 
-### elasticsearch 데이터 업데이트 및 삭제
+------------
+
+## elasticsearch 데이터 업데이트 
 
 Elasticsearch 도큐먼트는 불변이기 때문에, 작성된 것을 변경할 수 없다
 
@@ -137,7 +139,7 @@ curl -XPOST 127.0.0.1:9200/[index]/_doc/[id]/_update -d ' {
 업데이트 수행 방법은 모든 필드를 포함하여 전체 문서 다시 지정 -> 업데이트 이벤트로 처리
 
 
-## 모든 필드를 PUT 명령으로 지정하여 업데이트로 처리 
+### 모든 필드를 PUT 명령으로 지정하여 업데이트로 처리 
 
 ``` bash
 
@@ -203,6 +205,29 @@ curl -XGET 127.0.0.01:9200/movies/_doc/109487?pretty
  
  curl -XPOST 127.0.0.1:9200/movies/_doc/109487/_update -H 'Content-Type:application/json' -d '{"doc": {"title" : "Interstella" } } '
  
- ````
+ ```
 
  결과는 똑같이 바뀜
+
+ 
+ ## Elasticsearch로 데이터 삭제
+
+당연하지만 도큐먼트를 수정히거나 삭제하려면 해당 도큐먼트의 아이디를 알아야 함
+
+해당 아이디를 모를 경우 검색 예시
+
+``` bash
+curl -XGET 127.0.0.1:9200/movies/_search?q=[search_keyword]
+``` 
+
+삭제
+
+ ``` bash
+
+curl -XDELETE 127.0.0.1:9200/[index]/_doc/[document_s_id]
+
+ ```
+
+
+이벤트 발생은 `  "result" : "deleted"  ` 로 출력
+
