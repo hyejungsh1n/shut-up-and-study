@@ -17,17 +17,21 @@ Elasticsearch는 동일 도큐먼트는 두 번 추가 할 수 없다.
 `_version` 이라는 필드를 사용하면 됨
 
 Elasticsearch는 업데이트 시 증가한 `_version` 번호로 도큐먼트의 새 복사본을 작성하게 된다.
+
 Elasticserach는 자동으로 사용자가 작성한 최신 버전을 사용한다.
+
 업데이트 요청을 하면 완전히 새로운 문서가 생성 되고 새 도큐먼트는 새 버전으로 작성 된 후 이전 도큐먼트는 삭제 처리 됨
 
 → 당연한 거지만 지금 다루는 도큐먼트의 업데이트는 물론 삭제할 때도 모두 ID가 필요하다.
 
 
-### 복습 겸, Elasticsearch에 저장된 데이터를 찾는 법
+#### 복습 겸, Elasticsearch에 저장된 데이터를 찾는 법
 
 ```bash
 curl -XGET 127.0.0.1:9200/movies/_search?q=[search_keyword]
 ```
+
+
 
 **업데이트**는 **2가지 방법을 사용할 수 있다**
 
@@ -50,7 +54,9 @@ curl -XPOST 127.0.0.1:9200/movies/_doc/109487/_update
 -H 'Content-Type:application/json' -d '{"doc": {"title" : "Interstella" } } '
 ```
 
+
 → 결과는 똑같이 바뀜. 기존의 복사본이 변경 되었다는 것은 “_version“에 의해 알 수 있고, “result“를 통해 “updated“ 라는 이벤트가 발생했음을 알 수 있다.
+
 
 
 ## **데이터 삭제**
