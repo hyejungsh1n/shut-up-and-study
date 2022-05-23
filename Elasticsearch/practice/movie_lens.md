@@ -137,6 +137,8 @@ curl -XPOST 127.0.0.1:9200/[index]/_doc/[id]/_update -d ' {
 업데이트 수행 방법은 모든 필드를 포함하여 전체 문서 다시 지정 -> 업데이트 이벤트로 처리
 
 
+## 모든 필드를 PUT 명령으로 지정하여 업데이트로 처리 
+
 ``` bash
 
 curl -XPUT 127.0.0.01:9200/movies/_doc/109487?pretty -H 'Content-Type:application/json' -d ' {"genre": ["IMAX", "Sci-fi"], "title": "Interstella CAT", "year": 2014 } '
@@ -160,6 +162,47 @@ curl -XPUT 127.0.0.01:9200/movies/_doc/109487?pretty -H 'Content-Type:applicatio
 
 ```
 
-"result"가 "updated"인 것을 확인할 수 있다
+"result"가 "updated"인 것을 확인하며 이벤트가 발생한 것을 알 수 있다 
 
-기존 아이디로 검색 결과 요청 시, 복사본1이었던 Interstella는 삭제 되고 Interstella CAT만 남게 된다
+기존 아이디로 검색 결과 요청 시, 복사본1이었던 Interstella는 삭제 되고 Interstella CAT만 남게 된다 
+
+그 전까지는 변경이 없었으므로 버전은 2가 된다
+
+
+``` bash
+
+curl -XGET 127.0.0.01:9200/movies/_doc/109487?pretty
+
+-- 출력 결과 -- 
+
+{
+  "_index" : "movies",
+  "_type" : "_doc",
+  "_id" : "109487",
+  "_version" : 3,
+  "_seq_no" : 6,
+  "_primary_term" : 3,
+  "found" : true,
+  "_source" : {
+    "genre" : [
+      "IMAX",
+      "Sci-fi"
+    ],
+    "title" : "Interstella CAT",
+    "year" : 2014
+  }
+}
+
+```
+
+### 부분 업데이트로 정보 필드의 하위 집합만 변경
+
+부분 업데이트의 경우에는 POST 동사 활용
+
+``` bash
+ 
+ curl -XPOST 127.0.0.1:9200/movies/_doc/109487/_update -H 'Content-Type:application/json' -d '{"doc": {"title" : "Interstella" } } '
+ 
+ ````
+
+ 결과는 똑같이 바뀜
