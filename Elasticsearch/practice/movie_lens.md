@@ -86,3 +86,16 @@ Elasticsearch에서
 정보를 검색하는 경우 GET 사용
 
 인덱스에 새로운 문서를 추가할 경우 POST 사용
+
+
+## Bulk API 사용하기
+
+Elasticsearch는 특정 문서를 주어진 샤드로 해시
+
+개별 문서를 한 번에 하나씩 처리 해야 한다.
+
+다운 받은 자료를 bulk로 가져오기
+
+``` bash
+curl -XPUT 127.0.0.1:9200/bulk?pretty -H 'Content-Type:application/json' --data-binary @movies.json
+```
