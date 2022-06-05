@@ -1,13 +1,7 @@
+### Optimistic concurrency control
 
-### 낙관적 동시성 처리
+→ 웹 사이트, 엘라스틱 서치 서비스, 클러스터에 동시에 접속하는 클라이언트가 많을 경우 elasticsearch가 제공하는 동시성 처리 방법.
 
-웹 사이트나 엘라스틱 서치 서비스 혹은 클러스터를 동시에 접속하는 사람이 많을 경우 생기는 문제를 해결하는 방법 
+Elaticsearch는 기본적으로 `seq_no(sequece number)` 와 `_primary_term(primary term)` 을 이용한다.
 
-순서 번호 (sequence number)와 주요 용어 (primary term)을 함께 가져오면서 이 문서의 고유한 연대기록
-
-
-엘라스틱 서치에 무언가를 요청하면 해당 문서의 순서 번호도 함께 반환 된다 
-
-
-웹 서버나 클라이언트가 많을 경우, 이 '순서 번호'를 사용해 충돌이 생기면 재시도할 수 있도록 한다.
-
+기본적으로 Elasticsearch의 요청 자체에는 `sequece number` 를 요구하므로, 이 번호가 같을 경우에는 충돌이 발생하게 되어 재시도를 할 수 있게끔 만든다.
